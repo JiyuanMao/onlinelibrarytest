@@ -211,6 +211,45 @@ describe('Books', function (){
             });
         });
 
+        describe('GET /books/searchname/:name',  () => {
+            it('should return one or more books you fuzzy search for', function(done) {
+                chai.request(server)
+                    .get('/books/searchname/Dummies')
+                    .end(function(err, res) {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.be.a('array');
+                        expect(res.body.length).to.equal(1);
+                        let result = _.map(res.body, (book) => {
+                            return {
+                                name: book.name,
+                                author:book.author,
+                                publisher:book.publisher,
+                                category:book.category,
+                            }
+                        });
+                        expect(result).to.include( { name: 'Building Web Sites All-in-One Desk Reference For Dummies',
+                            author: 'Doug Sahlin',
+                            publisher:'John Wiley & Sons',
+                            category:'Computing Science',
+                        } );
+                        done();
+                    });
+            });
+            it('should return a 404 and a message for invalid keyword', function(done) {
+                chai.request(server)
+                    .get('/books/searchname/abc')
+                    .end(function(err, res) {
+                        expect(res).to.have.status(404);
+                        expect(res.body).to.have.property('message','Book NOT Found!' ) ;
+                        done();
+                    });
+            });
+            after(function(done) {
+                Book.collection.drop();
+                done();
+            });
+        });
+
 
 
 
