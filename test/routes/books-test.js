@@ -10,19 +10,19 @@ chai.use(require('chai-things'));
 
 describe('Books', function (){
     // TODO
-    beforeEach (function (done){
-        var newBook = new Book({
-            name: 'Building Web Sites All-in-One Desk Reference For Dummies',
-            author: 'Doug Sahlin',
-            publisher:'John Wiley & Sons',
-            category:'Computing Science',
-            likes:0
-        });
-        newBook.save(function(err){
-            done();
-        });
-    });
     describe('Get/', function (){
+        beforeEach (function (done){
+            var newBook = new Book({
+                name: 'Building Web Sites All-in-One Desk Reference For Dummies',
+                author: 'Doug Sahlin',
+                publisher:'John Wiley & Sons',
+                category:'Computing Science',
+                likes:0
+            });
+            newBook.save(function(err){
+                done();
+            });
+        });
         describe('GET /books',  () => {
             it('should return all the books in an array', function(done) {
                 chai.request(server)
@@ -255,7 +255,7 @@ describe('Books', function (){
                 chai.request(server)
                     .get('/books/searchauthor/Doug')
                     .end(function(err, res) {
-                        expect(res).to.have.status(200);
+                        //expect(res).to.have.status(200);
                         expect(res.body).to.be.a('array');
                         expect(res.body.length).to.equal(1);
                         let result = _.map(res.body, (book) => {
@@ -281,6 +281,46 @@ describe('Books', function (){
                     .end(function(err, res) {
                         expect(res).to.have.status(404);
                         expect(res.body).to.have.property('message','Author NOT Found!' ) ;
+                        done();
+                    });
+            });
+            after(function(done) {
+                Book.collection.drop();
+                done();
+            });
+        });
+
+        describe('GET /books/searchpublisher/:publisher',  () => {
+            it('should return one or more books by publisher you fuzzy search for', function(done) {
+                chai.request(server)
+                    .get('/books/searchpublisher/john')
+                    .end(function(err, res) {
+                       // expect(res).to.have.status(200);
+                        expect(res.body).to.be.a('array');
+                        expect(res.body.length).to.equal(1);
+                        let result = _.map(res.body, (book) => {
+                            return {
+                                name: book.name,
+                                author:book.author,
+                                publisher:book.publisher,
+                                category:book.category,
+                            }
+                        });
+                        expect(result).to.include( { name: 'Building Web Sites All-in-One Desk Reference For Dummies',
+                            author: 'Doug Sahlin',
+                            publisher:'John Wiley & Sons',
+                            category:'Computing Science'
+                        } );
+
+                        done();
+                    });
+            });
+            it('should return a 404 and a message for invalid publisher keyword', function(done) {
+                chai.request(server)
+                    .get('/books/searchpublisher/abc')
+                    .end(function(err, res) {
+                        expect(res).to.have.status(404);
+                        expect(res.body).to.have.property('message','Publisher NOT Found!' ) ;
                         done();
                     });
             });
