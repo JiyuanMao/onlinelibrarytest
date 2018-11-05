@@ -94,6 +94,45 @@ describe('Books', function (){
             });
         });
 
+        describe('GET /books/bpublisher/:publisher',  () => {
+            it('should return books according to publisher you search for', function(done) {
+                chai.request(server)
+                    .get('/books/bpublisher/John Wiley & Sons')
+                    .end(function(err, res) {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.be.a('array');
+                        expect(res.body.length).to.equal(1);
+                        let result = _.map(res.body, (book) => {
+                            return {
+                                name: book.name,
+                                author:book.author,
+                                publisher:book.publisher,
+                                category:book.category,
+                            }
+                        });
+                        expect(result).to.include( { name: 'Building Web Sites All-in-One Desk Reference For Dummies',
+                            author: 'Doug Sahlin',
+                            publisher:'John Wiley & Sons',
+                            category:'Computing Science',
+                        } );
+                        done();
+                    });
+            });
+            it('should return a 404 and a message for invalid book publisher', function(done) {
+                chai.request(server)
+                    .get('/books/bpublisher/abc')
+                    .end(function(err, res) {
+                        expect(res).to.have.status(404);
+                        expect(res.body).to.have.property('message','Publisher NOT Found!' ) ;
+                        done();
+                    });
+            });
+            after(function(done) {
+                Book.collection.drop();
+                done();
+            });
+        });
+
 
     });
 
