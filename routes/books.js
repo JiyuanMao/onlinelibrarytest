@@ -40,7 +40,7 @@ router.findByName = (req, res) => {
         if (book.length <=0) {
             // return a suitable error message
             res.status(404);
-            res.json({message: 'Name NOT Found!'});
+            res.json({message: 'Book NOT Found!'});
         }else
         // return the book
             res.send(JSON.stringify(book,null,5));
