@@ -1,0 +1,12 @@
+{
+  "message": "Book Successfully Added!",
+  "data": {
+    "likes": 0,
+    "_id": "5be02241bf376f30e47d9d08",
+    "name": "Multi-objective Decision Analysis",
+    "author": "Brownley, Clinton W.",
+    "publisher": "Business Expert Pr",
+    "category": "software engineering",
+    "__v": 0
+  }
+}

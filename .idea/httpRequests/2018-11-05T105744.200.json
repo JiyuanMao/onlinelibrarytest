@@ -1,0 +1,12 @@
+{
+  "message": "Book Successfully Added!",
+  "data": {
+    "likes": 0,
+    "_id": "5be02228bf376f30e47d9d07",
+    "name": "Foundations for Analytics with Python",
+    "author": "Brownley, Clinton W.",
+    "publisher": "Southeast University Press",
+    "category": "Computing Science&Software Engineering",
+    "__v": 0
+  }
+}

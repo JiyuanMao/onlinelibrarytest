@@ -1,0 +1,10 @@
+{
+  "message": "User Successfully Added!",
+  "data": {
+    "_id": "5be022d6bf376f30e47d9d0b",
+    "username": "john",
+    "password": "123456",
+    "usertype": "user",
+    "__v": 0
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "message": "Book Successfully Added!",
+  "data": {
+    "likes": 0,
+    "_id": "5be021ec329ef805407151bf",
+    "name": "Digital Portrait Photography For Dummies",
+    "author": "Doug Sahlin",
+    "publisher": "John Wiley & Sons",
+    "category": "Photography",
+    "__v": 0
+  }
+}

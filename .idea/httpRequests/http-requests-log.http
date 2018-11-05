@@ -1,0 +1,214 @@
+POST http://localhost:3000/users
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "username": "theo",     "password": "123456", "usertype":"user"}
+
+<> 2018-11-05T110116.200.json
+
+###
+
+POST http://localhost:3000/users
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "username": "zoe",     "password": "123456", "usertype":"admin"}
+
+<> 2018-11-05T110058.200.json
+
+###
+
+POST http://localhost:3000/users
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "username": "john",     "password": "123456", "usertype":"user"}
+
+<> 2018-11-05T110038.200.json
+
+###
+
+POST http://localhost:3000/comments
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"text": "it is very good,but need more practice ",     "bookname": "Foundations for Analytics with Python",  "username": "zoe"}
+
+<> 2018-11-05T105937.200.json
+
+###
+
+POST http://localhost:3000/comments
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"text": "it is very useful",     "bookname": "Foundations for Analytics with Python", "username": "john"}
+
+<> 2018-11-05T105910.200.json
+
+###
+
+GET http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Multi-objective Decision Analysis",     "author": "Brownley, Clinton W.",     "publisher": "Business Expert Pr",     "category": "software engineering"}
+
+<> 2018-11-05T105813.200.json
+
+###
+
+POST http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Multi-objective Decision Analysis",     "author": "Brownley, Clinton W.",     "publisher": "Business Expert Pr",     "category": "software engineering"}
+
+<> 2018-11-05T105809.200.json
+
+###
+
+POST http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "name": "Foundations for Analytics with Python",     "author": "Brownley, Clinton W.",     "publisher": "Southeast University Press",     "category": "Computing Science&Software Engineering"}
+
+<> 2018-11-05T105744.200.json
+
+###
+
+POST http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "name": "Foundations for Analytics with Python",     "author": "Brownley, Clinton W.",     "publisher": "Southeast University Press",     "category": "Computing Science&Software Engineering",}
+
+<> 2018-11-05T105736.400.html
+
+###
+
+POST http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "name": "Foundations for Analytics with Python",     "author": "Brownley, Clinton W.",     "publisher": "Southeast University Press",     "category": "Computing Science&Software Engineering",}
+
+<> 2018-11-05T105731.400.html
+
+###
+
+POST http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "name": "Foundations for Analytics with Python",     "author": "Brownley, Clinton W.",     "publisher": "Southeast University Press",     "category": "Computing Science&Software Engineering",}
+
+<> 2018-11-05T105719.400.html
+
+###
+
+GET http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Digital Portrait Photography For Dummies",     "author": "Doug Sahlin",     "publisher": "John Wiley & Sons",     "category": "Photography"}
+
+<> 2018-11-05T105650.200.json
+
+###
+
+POST http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Digital Portrait Photography For Dummies",     "author": "Doug Sahlin",     "publisher": "John Wiley & Sons",     "category": "Photography"}
+
+<> 2018-11-05T105644.200.json
+
+###
+
+POST http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Digital Portrait Photography For Dummies",     "author": "Doug Sahlin",     "publisher": "John Wiley & Sons",     "category": "Photography",}
+
+<> 2018-11-05T105607.400.html
+
+###
+
+GET http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Building Web Sites All-in-One Desk Reference For Dummies","author": "Doug Sahlin", "publisher": "John Wiley & Sons", "category": "Computing Science"}
+
+<> 2018-11-05T105457.200.json
+
+###
+
+POST http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Building Web Sites All-in-One Desk Reference For Dummies","author": "Doug Sahlin", "publisher": "John Wiley & Sons", "category": "Computing Science"}
+
+<> 2018-11-05T105449.200.json
+
+###
+
+POST http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+
+{"name": "Building Web Sites All-in-One Desk Reference For Dummies","author": "Doug Sahlin", "publisher": "John Wiley & Sons", "category": "Computing Science"}
+
+<> 2018-11-05T105258.200.json
+
+###
+
+POST http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+
+{name: "Building Web Sites All-in-One Desk Reference For Dummies",author: "Doug Sahlin",     publisher: "John Wiley & Sons", category: "Computing Science"}
+
+<> 2018-11-05T104953.200.json
+
+###
+
+POST http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+
+{"name": "Building Web Sites All-in-One Desk Reference For Dummies",     "author": "Doug Sahlin",     "publisher": "John Wiley & Sons", "category": "Computing Science"}
+
+<> 2018-11-05T104913.200.json
+
+###
+
+POST http://localhost:8080/resources
+Accept: */*
+Cache-Control: no-cache
+
+{"name": "Building Web Sites All-in-One Desk Reference For Dummies",     "author": "Doug Sahlin",     "publisher": "John Wiley & Sons", "category": "Computing Science"}
+
+###
+
