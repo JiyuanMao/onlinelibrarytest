@@ -76,8 +76,7 @@ users:
 }
 
 ## Sample Test execution.
-books:
-  $ D:\WIT\OnlineLibrary>mocha test/routes/books-test.js
+$ D:\WIT\OnlineLibrary>mocha test/routes/books-test.js
 
 
   > D:\WIT\OnlineLibrary
@@ -150,8 +149,6 @@ books:
   22 passing (3s)
 $
 
-comments:
-
 $ D:\WIT\OnlineLibrary>mocha test/routes/comments-test.js
 
   > D:\WIT\OnlineLibrary
@@ -193,7 +190,7 @@ $ D:\WIT\OnlineLibrary>mocha test/routes/comments-test.js
   9 passing (2s)
 $
 
-  users:
+
 $ D:\WIT\OnlineLibrary>mocha test/routes/users-test.js
 
   > D:\WIT\OnlineLibrary
