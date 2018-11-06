@@ -143,4 +143,50 @@ describe('Users', function () {
         });
     });
 
+    describe('Delete/', function () {
+        describe('DELETE /users/:id', () => {
+            describe('when id is correct', function (done) {
+                it('should return delelte message and update datastore', function (done) {
+                    chai.request(server)
+                        .get('/users')
+                        .end(function (err, res) {
+                            const userId = res.body[0]._id;
+                            chai.request(server)
+                                .delete('/users/'+ userId)
+                                .end(function (err, res) {
+                                    expect(res).to.have.status(200);
+                                    expect(res.body).to.have.property('message').equal('User Successfully Deleted!');
+                                    done();
+                                });
+                        });
+                });
+
+                after(function (done) {
+                    chai.request(server)
+                        .get('/users')
+                        .end(function (err, res) {
+                            expect(res.body).to.not.include({
+                                username: "john",
+                                password: "654321",
+                                usertype:"user"
+                            });
+                            done();
+                        });
+                });
+            });
+            describe('when id is wrong', function (done) {
+                it('should return a 404 and a message for invalid user id', function (done) {
+                    chai.request(server)
+                        .delete('/user/1100001')
+                        .end(function (err, res) {
+                            expect(res).to.have.status(404);
+                            //expect(res.body).to.have.property('message','User NOT DELETED!' ) ;
+                            //expect(res.body).to.have.property('message').equal('User NOT DELETED!');
+                            done();
+                        });
+                });
+            });
+        });
+    });
+
 })

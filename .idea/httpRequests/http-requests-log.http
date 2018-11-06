@@ -1,3 +1,14 @@
+DELETE http://localhost:3000/comments/5be0f89b0c06853
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "name": "Street Photography Now",                         "author": " Sophie Howarth,Stephen McL",                         "publisher": "Thames & Hudson",                        "category": "Computing Science", "likes": 0}
+
+<> 2018-11-06T024750.404.json
+
+###
+
 DELETE http://localhost:3000/comments/5be0f89b0c06853188959fe4
 Accept: */*
 Cache-Control: no-cache
