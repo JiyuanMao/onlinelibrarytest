@@ -101,4 +101,42 @@ describe('Comments', function () {
             });
         });
     });
+    describe('Post/', function (){
+        describe('POST /comments', function () {
+            it('should return confirmation message and update datastore', function (done) {
+                let comment = {
+                    text: "it is very useful",
+                    bookname: "Building Web Sites All-in-One Desk Reference For Dummies",
+                    username: "john"
+                };
+                chai.request(server)
+                    .post('/comments')
+                    .send(comment)
+                    .end(function(err, res) {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.have.property('message').equal('Comment Successfully Added!' );
+                        done();
+                    });
+            });
+            after(function (done) {
+                chai.request(server)
+                    .get('/comments/Building Web Sites All-in-One Desk Reference For Dummies')
+                    .end(function (err, res) {
+                        let result = _.map(res.body, (comment) => {
+                            return {
+                                text: comment.text,
+                                username: comment.username,
+                                bookname: comment.bookname,
+                            };
+                        });
+                        expect(result).to.include({
+                            text: "it is very useful",
+                            bookname: "Building Web Sites All-in-One Desk Reference For Dummies",
+                            username: "john"
+                        });
+                        done();
+                    });
+            });
+        });
+    });
 })
