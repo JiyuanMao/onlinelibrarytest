@@ -42,6 +42,7 @@ models:users
 ## Data storage.
 
   books:
+  
     let BookSchema = new mongoose.Schema({
         name: String,
         author: String,
@@ -64,6 +65,7 @@ models:users
     }
 
   comments:
+
     let CommentSchema = new mongoose.Schema({
            text: String,
            username:String,
@@ -82,13 +84,14 @@ models:users
     }
 
   users:
+
     let UserSchema = new mongoose.Schema({
         username: String,
         password: String,
         usertype: String,
     },
     { collection: 'usersdb' });
-    
+
     {
         "_id": {
             "$oid": "5bcc8a7585eb763974c93595"
