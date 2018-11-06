@@ -139,4 +139,62 @@ describe('Comments', function () {
             });
         });
     });
+
+    describe('Put/', function () {
+        describe('PUT /comments/:id', () => {
+            describe('when id is correct', function (done) {
+                it('should return the updated message', function (done) {
+                    let comment = {
+                        text: "it needs improvements",
+                        bookname: "Building Web Sites All-in-One Desk Reference For Dummies",
+                        username: "john"
+                    };
+                    chai.request(server)
+                        .get('/comments/Building Web Sites All-in-One Desk Reference For Dummies')
+                        .end(function (err, res) {
+                            const commentId = res.body[0]._id;
+                            chai.request(server)
+                                .put('/comments/'+commentId)
+                                .send(comment)
+                                .end(function (err, res) {
+                                    expect(res).to.have.status(200);
+                                    expect(res.body).to.have.property('message').equal('Comment Successfully UpDated!');
+                                    done();
+                                });
+                        });
+                });
+                after(function (done) {
+                    chai.request(server)
+                        .get('/comments/Building Web Sites All-in-One Desk Reference For Dummies')
+                        .end(function (err, res) {
+                            let result = _.map(res.body, (comment) => {
+                                return {
+                                    text: comment.text,
+                                    username: comment.username,
+                                    bookname: comment.bookname,
+                                };
+                            });
+                            expect(result).to.include({
+                                text: "it needs improvements",
+                                bookname: "Building Web Sites All-in-One Desk Reference For Dummies",
+                                username: "john"
+                            });
+                            done();
+                        });
+                });
+            });
+            describe('when id is wrong', function (done) {
+                it('should return a 404 and a message for invalid comment id', function (done) {
+                    chai.request(server)
+                        .put('/comments/1100001')
+                        .end(function (err, res) {
+                            expect(res).to.have.status(404);
+                            expect(res.body).to.have.property('message', 'Comment NOT Found!');
+                            done();
+                        });
+                });
+            });
+        });
+    });
+
 })

@@ -1,3 +1,14 @@
+GET http://localhost:3000/comments/search/build
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "name": "Street Photography Now",                         "author": " Sophie Howarth,Stephen McL",                         "publisher": "Thames & Hudson",                        "category": "Computing Science", "likes": 0}
+
+<> 2018-11-06T011920.200.json
+
+###
+
 PUT http://localhost:3000/books/5be0df065253e2178c427536
 Accept: */*
 Cache-Control: no-cache

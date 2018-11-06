@@ -463,25 +463,6 @@ describe('Books', function (){
                             });
                             done();
                         });
-                    /*let book = {
-                        name: 'Street Photography Now',
-                        author: " Sophie Howarth,Stephen McL",
-                        publisher: "Thames & Hudson",
-                        category: 'Photography', likes: 0
-                    };
-                    chai.request(server)
-                        .get('/books')
-                        .end(function (err, res) {
-                            const bookId = res.body[0]._id;
-                            chai.request(server)
-                                .put('/books/'+bookId)
-                                .send(book)
-                                .end(function (err, res) {
-                                    expect(res).to.have.status(200);
-                                    expect(res.body).to.have.property('message').equal('Book Successfully UpDated!');
-                                    done();
-                                });
-                        });*/
                 });
             });
             describe('when id is wrong', function (done) {
@@ -519,7 +500,7 @@ describe('Books', function (){
                            // expect(res).to.have.status(200);
                             //expect(res.body).to.have.property('message').equal('Book Successfully Deleted!');
                             //done();
-                        });
+                });
 
                 after(function (done) {
                     chai.request(server)
