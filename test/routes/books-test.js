@@ -429,12 +429,19 @@ describe('Books', function (){
                         category: 'Computing Science&Software Engineering', likes: 0
                     };
                     chai.request(server)
-                        .put('/books/5be0cb26e28cf53ff8b78beb')
-                        .send(book)
+                        .get('/books')
                         .end(function (err, res) {
-                            //expect(res).to.have.status(200);
-                            done();
+                            const bookId = res.body[0]._id;
+                            chai.request(server)
+                                .put('/books/'+bookId)
+                                .send(book)
+                                .end(function (err, res) {
+                                    expect(res).to.have.status(200);
+                                    expect(res.body).to.have.property('message').equal('Book Successfully UpDated!');
+                                    done();
+                                });
                         });
+
                 });
                 after(function (done) {
                     chai.request(server)
@@ -454,21 +461,27 @@ describe('Books', function (){
                                 publisher: "Thames & Hudson",
                                 category: "Computing Science&Software Engineering",
                             });
-                            //done();
+                            done();
                         });
-                    let book = {
+                    /*let book = {
                         name: 'Street Photography Now',
                         author: " Sophie Howarth,Stephen McL",
                         publisher: "Thames & Hudson",
                         category: 'Photography', likes: 0
                     };
                     chai.request(server)
-                        .put('/books/5be0cb26e28cf53ff8b78beb')
-                        .send(book)
+                        .get('/books')
                         .end(function (err, res) {
-                            // expect(res).to.have.status(200);
-                            done();
-                        });
+                            const bookId = res.body[0]._id;
+                            chai.request(server)
+                                .put('/books/'+bookId)
+                                .send(book)
+                                .end(function (err, res) {
+                                    expect(res).to.have.status(200);
+                                    expect(res.body).to.have.property('message').equal('Book Successfully UpDated!');
+                                    done();
+                                });
+                        });*/
                 });
             });
             describe('when id is wrong', function (done) {
@@ -485,7 +498,7 @@ describe('Books', function (){
         });
     });
 
-    describe.only('Delete/', function () {
+    describe('Delete/', function () {
         describe('DELETE /books/:id', () => {
             describe('when id is correct', function (done) {
                 it('should return delelte message and update datastore', function (done) {

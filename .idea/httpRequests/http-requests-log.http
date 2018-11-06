@@ -1,3 +1,47 @@
+PUT http://localhost:3000/books/5be0df065253e2178c427536
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "name": "Street Photography Now",                         "author": " Sophie Howarth,Stephen McL",                         "publisher": "Thames & Hudson",                        "category": "Computing Science", "likes": 0}
+
+<> 2018-11-06T123613.200.json
+
+###
+
+PUT http://localhost:3000/books/5be0df065253e2178c427536
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "name": "Street Photography Now",                         "author": " Sophie Howarth,Stephen McL",                         "publisher": "Thames & Hudson",                        "category": "Computing Science&Software Engineering", "likes": 0}
+
+<> 2018-11-06T123526.200.json
+
+###
+
+PUT http://localhost:3000/books/5be0df065253e2178c427536
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "name": "Street Photography Now",                         "author": " Sophie Howarth,Stephen McL",                         "publisher": "Thames & Hudson",                        " category": "Computing Science&Software Engineering", "likes": 0}
+
+<> 2018-11-06T123429.200.json
+
+###
+
+PUT http://localhost:3000/books/5be0df065253e2178c427536
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "name": "Street Photography Now",                         "author": " Sophie Howarth,Stephen McL",                         "publisher": "Thames & Hudson",                        " category": "Computing Science&Software Engineering", "likes": 0}
+
+<> 2018-11-06T123003.404.json
+
+###
+
 DELETE http://localhost:3000/books/5be0d4bc7f6bf5
 Accept: */*
 Cache-Control: no-cache

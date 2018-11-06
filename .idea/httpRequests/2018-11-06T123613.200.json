@@ -1,0 +1,12 @@
+{
+  "message": "Book Successfully UpDated!",
+  "data": {
+    "likes": 0,
+    "_id": "5be0df065253e2178c427536",
+    "name": "Street Photography Now",
+    "author": " Sophie Howarth,Stephen McL",
+    "publisher": "Thames & Hudson",
+    "__v": 0,
+    "category": "Computing Science"
+  }
+}

@@ -159,7 +159,7 @@ router.editBook = (req, res) => {
         "category": req.body.category,
         "likes": req.body.likes
     }*/
-    Book.find(req.params.id, function (err, book) {
+    Book.findById(req.params.id, function (err, book) {
         if (err) {
             res.status(404);
             res.json({message: 'Invalid book id,update not successfully!'});
