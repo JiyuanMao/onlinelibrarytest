@@ -77,7 +77,7 @@ users:
 
 ## Sample Test execution.
 books:
-D:\WIT\OnlineLibrary>mocha test/routes/books-test.js
+$ D:\WIT\OnlineLibrary>mocha test/routes/books-test.js
 
   Books
     Get/
@@ -146,11 +146,11 @@ s)
 
 
   22 passing (3s)
-
+$
 
 comments:
 
-D:\WIT\OnlineLibrary>mocha test/routes/comments-test.js
+$ D:\WIT\OnlineLibrary>mocha test/routes/comments-test.js
 
 
   Comments
@@ -186,10 +186,10 @@ Successfully Connected to [ onlinelibrary ]
 
 
   9 passing (2s)
-
+$
 
   users:
-  D:\WIT\OnlineLibrary>mocha test/routes/users-test.js
+$ D:\WIT\OnlineLibrary>mocha test/routes/users-test.js
 
 
     Users
@@ -217,7 +217,7 @@ Successfully Connected to [ onlinelibrary ]
 
 
     6 passing (1s)
-
+$
 
 ## Extra features.
 I created a new database and completed the test isolation.
