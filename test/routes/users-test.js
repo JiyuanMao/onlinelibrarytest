@@ -48,7 +48,43 @@ describe('Users', function () {
                     });
             });
         });
-
-
     });
+    describe('Post/', function (){
+        describe('POST /users', function () {
+            it('should return confirmation message and update datastore', function (done) {
+                let user = {
+                    username: "john",
+                    password: "123456",
+                    usertype:"user"
+                };
+                chai.request(server)
+                    .post('/users')
+                    .send(user)
+                    .end(function(err, res) {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.have.property('message').equal('User Successfully Added!' );
+                        done();
+                    });
+            });
+            after(function (done) {
+                chai.request(server)
+                    .get('/users/')
+                    .end(function (err, res) {
+                        let result = _.map(res.body, (user) => {
+                            return {
+                                username: user.username,
+                                password: user.password,
+                                usertype:user.usertype
+                            };
+                        });
+                        expect(result).to.include( {  username: "john",
+                            password: "123456",
+                            usertype:"user"
+                        } );
+                        done();
+                    });
+            });
+        });
+    });
+
 })
