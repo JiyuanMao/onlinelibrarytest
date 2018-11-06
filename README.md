@@ -98,6 +98,7 @@ models:users
         },
         "username": "john",
         "password": "123456",
+        "usertype": "admin"
         "__v": 0
     }
 
