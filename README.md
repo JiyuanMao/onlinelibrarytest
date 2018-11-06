@@ -77,72 +77,76 @@ users:
 
 ## Sample Test execution.
 books:
-$ D:\WIT\OnlineLibrary>mocha test/routes/books-test.js
+  $ D:\WIT\OnlineLibrary>mocha test/routes/books-test.js
 
-  Books
-    Get/
-      GET /books
-Successfully Connected to [ onlinelibrary ]
-Successfully Connected to [ onlinelibrary ]
-Successfully Connected to [ onlinelibrary ]
-        √ should return all the books in an array (160ms)
-      GET /books/bname/:name
-        when name is correct
-          √ should return one book by name you search for (47ms)
-        when name is wrong
-          √ should return a 404 and a message for wrong book name
-      GET /books/bpublisher/:publisher
-        when publisher is correct
-          √ should return books according to publisher you search for (40ms)
-        when publisher is wrong
-          √ should return a 404 and a message for invalid book publisher
-      GET /books/bcategory/:category
-        when category is correct
-          √ should return books according to category you search for (44ms)
-        when category is wrong
-          √ should return a 404 and a message for invalid book category (49ms)
-      GET /books/bauthor/:author
-        when author is correct
-          √ should return books according to author you search for (46ms)
-        when author is wrong
-          √ should return a 404 and a message for invalid book author (38ms)
-      GET /books/searchname/:name
-        when fuzzy search name is correct
-          √ should return one or more books you fuzzy search for (42ms)
-        when fuzzy search name is wrong
-          √ should return a 404 and a message for invalid keyword
-      GET /books/searchauthor/:author
-        when fuzzy search author is correct
-          √ should return one or more books by author you fuzzy search for (40m
+
+  > D:\WIT\OnlineLibrary
+  > mocha test/routes/books-test.js
+
+    Books
+      Get/
+        GET /books
+          Successfully Connected to [ onlinelibrary ]
+          Successfully Connected to [ onlinelibrary ]
+          Successfully Connected to [ onlinelibrary ]
+            √ should return all the books in an array (160ms)
+        GET /books/bname/:name
+          when name is correct
+            √ should return one book by name you search for (47ms)
+          when name is wrong
+            √ should return a 404 and a message for wrong book name
+        GET /books/bpublisher/:publisher
+          when publisher is correct
+            √ should return books according to publisher you search for (40ms)
+          when publisher is wrong
+            √ should return a 404 and a message for invalid book publisher
+        GET /books/bcategory/:category
+          when category is correct
+            √ should return books according to category you search for (44ms)
+          when category is wrong
+            √ should return a 404 and a message for invalid book category (49ms)
+        GET /books/bauthor/:author
+          when author is correct
+            √ should return books according to author you search for (46ms)
+          when author is wrong
+            √ should return a 404 and a message for invalid book author (38ms)
+        GET /books/searchname/:name
+          when fuzzy search name is correct
+            √ should return one or more books you fuzzy search for (42ms)
+          when fuzzy search name is wrong
+            √ should return a 404 and a message for invalid keyword
+        GET /books/searchauthor/:author
+          when fuzzy search author is correct
+            √ should return one or more books by author you fuzzy search for (40m
 s)
-        when fuzzy search author is wrong
-          √ should return a 404 and a message for invalid keyword
-      GET /books/searchpublisher/:publisher
-        when fuzzy search publisher is correct
-          √ should return one or more books by publisher you fuzzy search for
-        when fuzzy search publisher is wrong
-          √ should return a 404 and a message for invalid publisher keyword
-      GET /books/searchcategory/:category
-        when fuzzy search category is correct
-          √ should return one or more books by category you fuzzy search for (3
+          when fuzzy search author is wrong
+            √ should return a 404 and a message for invalid keyword
+        GET /books/searchpublisher/:publisher
+          when fuzzy search publisher is correct
+            √ should return one or more books by publisher you fuzzy search for
+          when fuzzy search publisher is wrong
+            √ should return a 404 and a message for invalid publisher keyword
+        GET /books/searchcategory/:category
+          when fuzzy search category is correct
+            √ should return one or more books by category you fuzzy search for (3
 8ms)
-        when fuzzy search category is wrong
-          √ should return a 404 and a message for invalid category keyword
-    Post/
-      POST /books
-        √ should return confirmation message and update datastore (86ms)
-    Put/
-      PUT /books/:id
-        when id is correct
-          √ should return the updated message (125ms)
-        when id is wrong
-          √ should return a 404 and a message for invalid book id
-    Delete/
-      DELETE /books/:id
-        when id is correct
-          √ should return delelte message and update datastore (87ms)
-        when id is wrong
-          √ should return a 404 and a message for invalid book id
+          when fuzzy search category is wrong
+            √ should return a 404 and a message for invalid category keyword
+      Post/
+        POST /books
+           √ should return confirmation message and update datastore (86ms)
+      Put/
+        PUT /books/:id
+          when id is correct
+            √ should return the updated message (125ms)
+          when id is wrong
+            √ should return a 404 and a message for invalid book id
+      Delete/
+        DELETE /books/:id
+          when id is correct
+            √ should return delelte message and update datastore (87ms)
+          when id is wrong
+            √ should return a 404 and a message for invalid book id
 
 
   22 passing (3s)
@@ -152,14 +156,17 @@ comments:
 
 $ D:\WIT\OnlineLibrary>mocha test/routes/comments-test.js
 
+  > D:\WIT\OnlineLibrary
+  > mocha test/routes/books-test.js
+
 
   Comments
     Get/
       GET /comments/:bookname
         when book name is correct
-Successfully Connected to [ onlinelibrary ]
-Successfully Connected to [ onlinelibrary ]
-Successfully Connected to [ onlinelibrary ]
+        Successfully Connected to [ onlinelibrary ]
+        Successfully Connected to [ onlinelibrary ]
+        Successfully Connected to [ onlinelibrary ]
           √ should return the comments you search for (153ms)
         when book name is wrong
           √ should return a 404 and a message for invalid book name (39ms)
@@ -191,13 +198,16 @@ $
   users:
 $ D:\WIT\OnlineLibrary>mocha test/routes/users-test.js
 
+  > D:\WIT\OnlineLibrary
+  > mocha test/routes/books-test.js
+
 
     Users
       Get/
         GET /users
-  Successfully Connected to [ onlinelibrary ]
-  Successfully Connected to [ onlinelibrary ]
-  Successfully Connected to [ onlinelibrary ]
+        Successfully Connected to [ onlinelibrary ]
+        Successfully Connected to [ onlinelibrary ]
+        Successfully Connected to [ onlinelibrary ]
           √ should return all the users in an array (166ms)
       Post/
         POST /users
