@@ -117,8 +117,7 @@ books:
             √ should return a 404 and a message for invalid keyword
         GET /books/searchauthor/:author
           when fuzzy search author is correct
-            √ should return one or more books by author you fuzzy search for (40m
-s)
+            √ should return one or more books by author you fuzzy search for (40ms)
           when fuzzy search author is wrong
             √ should return a 404 and a message for invalid keyword
         GET /books/searchpublisher/:publisher
@@ -128,13 +127,12 @@ s)
             √ should return a 404 and a message for invalid publisher keyword
         GET /books/searchcategory/:category
           when fuzzy search category is correct
-            √ should return one or more books by category you fuzzy search for (3
-8ms)
+            √ should return one or more books by category you fuzzy search for (38ms)
           when fuzzy search category is wrong
             √ should return a 404 and a message for invalid category keyword
       Post/
         POST /books
-           √ should return confirmation message and update datastore (86ms)
+            √ should return confirmation message and update datastore (86ms)
       Put/
         PUT /books/:id
           when id is correct
@@ -160,36 +158,36 @@ $ D:\WIT\OnlineLibrary>mocha test/routes/comments-test.js
   > mocha test/routes/books-test.js
 
 
-  Comments
-    Get/
-      GET /comments/:bookname
-        when book name is correct
-        Successfully Connected to [ onlinelibrary ]
-        Successfully Connected to [ onlinelibrary ]
-        Successfully Connected to [ onlinelibrary ]
-          √ should return the comments you search for (153ms)
-        when book name is wrong
-          √ should return a 404 and a message for invalid book name (39ms)
-      GET /comments/search/:bookname
-        when fuzzy search book name is correct
-          √ should return one or more comments you fuzzy search for (41ms)
-        when fuzzy search book name is wrong
-          √ should return a 404 and a message for invalid keyword
-    Post/
-      POST /comments
-        √ should return confirmation message and update datastore (150ms)
-    Put/
-      PUT /comments/:id
-        when id is correct
-          √ should return the updated message (120ms)
-        when id is wrong
-          √ should return a 404 and a message for invalid comment id
-    Delete/
-      DELETE /comments/:id
-        when id is correct
-          √ should return delelte message and update datastore (81ms)
-        when id is wrong
-          √ should return a 404 and a message for invalid comment id
+    Comments
+      Get/
+        GET /comments/:bookname
+          when book name is correct
+          Successfully Connected to [ onlinelibrary ]
+          Successfully Connected to [ onlinelibrary ]
+          Successfully Connected to [ onlinelibrary ]
+            √ should return the comments you search for (153ms)
+          when book name is wrong
+            √ should return a 404 and a message for invalid book name (39ms)
+        GET /comments/search/:bookname
+          when fuzzy search book name is correct
+            √ should return one or more comments you fuzzy search for (41ms)
+          when fuzzy search book name is wrong
+            √ should return a 404 and a message for invalid keyword
+      Post/
+        POST /comments
+          √ should return confirmation message and update datastore (150ms)
+      Put/
+        PUT /comments/:id
+          when id is correct
+            √ should return the updated message (120ms)
+          when id is wrong
+            √ should return a 404 and a message for invalid comment id
+      Delete/
+        DELETE /comments/:id
+          when id is correct
+            √ should return delelte message and update datastore (81ms)
+          when id is wrong
+            √ should return a 404 and a message for invalid comment id
 
 
   9 passing (2s)
