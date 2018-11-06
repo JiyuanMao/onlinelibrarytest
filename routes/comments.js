@@ -50,7 +50,7 @@ router.addComment = (req, res) => {
 
 router.deleteComment = (req, res) => {
 
-    Comment.findAndRemove(req.params.id, function(err) {
+    Comment.findByIdAndRemove(req.params.id, function(err) {
         if (err) {
             res.status(404);  //new
             res.json({message: 'Comment NOT DELETED!', errmsg: err});

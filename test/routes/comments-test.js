@@ -197,4 +197,49 @@ describe('Comments', function () {
         });
     });
 
+    describe('Delete/', function () {
+        describe('DELETE /comments/:id', () => {
+            describe('when id is correct', function (done) {
+                it('should return delelte message and update datastore', function (done) {
+                    chai.request(server)
+                        .get('/comments/Building Web Sites All-in-One Desk Reference For Dummies')
+                        .end(function (err, res) {
+                            const commentId = res.body[0]._id;
+                            chai.request(server)
+                                .delete('/comments/'+ commentId)
+                                .end(function (err, res) {
+                                    expect(res).to.have.status(200);
+                                    expect(res.body).to.have.property('message').equal('Comment Successfully Deleted!');
+                                    done();
+                                });
+                        });
+                });
+
+                after(function (done) {
+                    chai.request(server)
+                        .get('/comments/Building Web Sites All-in-One Desk Reference For Dummies')
+                        .end(function (err, res) {
+                            expect(res.body).to.not.include({
+                                text: "it needs improvements",
+                                bookname: "Building Web Sites All-in-One Desk Reference For Dummies",
+                                username: "john"
+                            });
+                            done();
+                        });
+                });
+            });
+            describe('when id is wrong', function (done) {
+                it('should return a 404 and a message for invalid comment id', function (done) {
+                    chai.request(server)
+                        .delete('/comments/1100001')
+                        .end(function (err, res) {
+                            expect(res).to.have.status(404);
+                            expect(res.body).to.have.property('message', 'Comment NOT DELETED!');
+                            done();
+                        });
+                });
+            });
+        });
+    });
+
 })
