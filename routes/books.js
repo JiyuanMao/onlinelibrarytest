@@ -69,7 +69,7 @@ router.addBook = (req, res) => {
 
 router.incrementLikes = (req, res) => {
 
-    Book.find(req.params.name, function(err,book) {
+    Book.find(req.params.id, function(err,book) {
         if (err) {
             res.status(404);  //new
             res.json({message: 'Liked Not Successfully!', errmsg: err})
@@ -88,7 +88,7 @@ router.incrementLikes = (req, res) => {
 
 router.deleteBook = (req, res) => {
 
-    Book.remove(req.params.name, function(err) {
+    Book.findByIdAndRemove(req.params.id, function(err) {
         if (err) {
             res.status(404);  //new
             res.json({message: 'Book NOT DELETED!', errmsg: err});

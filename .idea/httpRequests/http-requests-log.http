@@ -1,3 +1,124 @@
+DELETE http://localhost:3000/books/5be0d4bc7f6bf5
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "username": "theo",     "password": "123456", "usertype":"user"}
+
+<> 2018-11-06T121305.404.json
+
+###
+
+DELETE http://localhost:3000/books/5be0d4bc7f6bf5
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "username": "theo",     "password": "123456", "usertype":"user"}
+
+<> 2018-11-06T121242.500.html
+
+###
+
+DELETE http://localhost:3000/books/5be0d4bc7f6bf5
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "username": "theo",     "password": "123456", "usertype":"user"}
+
+<> 2018-11-06T121222.500.html
+
+###
+
+DELETE http://localhost:3000/books/5be0d4bc7f6bf5
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "username": "theo",     "password": "123456", "usertype":"user"}
+
+<> 2018-11-06T121144.200.json
+
+###
+
+DELETE http://localhost:3000/books/5be0d4bc7f6bf5
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "username": "theo",     "password": "123456", "usertype":"user"}
+
+<> 2018-11-06T121031.200.json
+
+###
+
+DELETE http://localhost:3000/books/5be0d4bc7f6bf5
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "username": "theo",     "password": "123456", "usertype":"user"}
+
+<> 2018-11-06T120912.200.json
+
+###
+
+DELETE http://localhost:3000/books/5be0d4bc7f6bf53ac4279761
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "username": "theo",     "password": "123456", "usertype":"user"}
+
+<> 2018-11-05T115553.200.json
+
+###
+
+DELETE http://localhost:3000/books/5be0d4bc7f6bf53ac4279761
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "username": "theo",     "password": "123456", "usertype":"user"}
+
+<> 2018-11-05T115520.404.json
+
+###
+
+DELETE http://localhost:3000/books/5be0d4bc7f6bf53ac4279761
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "username": "theo",     "password": "123456", "usertype":"user"}
+
+<> 2018-11-05T115457.404.json
+
+###
+
+DELETE http://localhost:3000/books/5be0d4bc7f6bf53ac4279761
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "username": "theo",     "password": "123456", "usertype":"user"}
+
+<> 2018-11-05T115441.404.json
+
+###
+
+DELETE http://localhost:3000/books/5be0d4bc7f6bf53ac4279761
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "username": "theo",     "password": "123456", "usertype":"user"}
+
+<> 2018-11-05T115328.404.json
+
+###
+
 POST http://localhost:3000/users
 Accept: */*
 Cache-Control: no-cache

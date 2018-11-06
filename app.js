@@ -44,7 +44,7 @@ app.post('/comments',comments.addComment);
 app.post('/users',users.addUser);
 
 app.put('/books/:id', books.editBook);
-app.put('/books/:name/like', books.incrementLikes);
+app.put('/books/:id/like', books.incrementLikes);
 app.put('/comments/:id', comments.editComment);
 app.put('/users/:id', users.editUser);
 

@@ -1,0 +1,7 @@
+{
+  "message": "Book NOT DELETED!",
+  "errmsg": {
+    "message": "Parameter \"filter\" to remove() must be an object, got 5be0d4bc7f6bf53ac4279761",
+    "name": "ObjectParameterError"
+  }
+}

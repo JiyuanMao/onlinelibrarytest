@@ -1,0 +1,11 @@
+{
+  "message": "Book NOT DELETED!",
+  "errmsg": {
+    "message": "Cast to ObjectId failed for value \"5be0d4bc7f6bf5\" at path \"_id\" for model \"Book\"",
+    "name": "CastError",
+    "stringValue": "\"5be0d4bc7f6bf5\"",
+    "kind": "ObjectId",
+    "value": "5be0d4bc7f6bf5",
+    "path": "_id"
+  }
+}
