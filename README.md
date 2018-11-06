@@ -40,40 +40,63 @@ models:users
 
 
 ## Data storage.
-books:
-{
-    "_id": {
-        "$oid": "5bddd16a83307418042380d3"
-    },
-    "likes": 0,
-    "name": "Building Web Sites All-in-One Desk Reference For Dummies",
-    "author": "Doug Sahlin",
-    "publisher": "John Wiley & Sons",
-    "category": "Computing Science",
-    "__v": 0
-}
 
-comments:
-{
-    "_id": {
-        "$oid": "5bcc6cce83482d46acf0b4a8"
+  books:
+    let BookSchema = new mongoose.Schema({
+        name: String,
+        author: String,
+        publisher: String,
+        category: String,
+        likes: {type: Number, default: 0}
     },
-    "text": "it is very useful",
-    "bookname": "Foundations for Analytics with Python",
-    "__v": 0,
-    "username": "john"
-}
+    { collection: 'booksdb' });
 
-users:
-{
-    "_id": {
-        "$oid": "5bcc8a7585eb763974c93595"
+    {
+        "_id": {
+            "$oid": "5bddd16a83307418042380d3"
+        },
+        "likes": 0,
+        "name": "Building Web Sites All-in-One Desk Reference For Dummies",
+        "author": "Doug Sahlin",
+        "publisher": "John Wiley & Sons",
+        "category": "Computing Science",
+        "__v": 0
+    }
+
+  comments:
+    let CommentSchema = new mongoose.Schema({
+           text: String,
+           username:String,
+           bookname: String,
+       },
+       { collection: 'commentsdb' });
+
+    {
+        "_id": {
+            "$oid": "5bcc6cce83482d46acf0b4a8"
+        },
+        "text": "it is very useful",
+        "bookname": "Foundations for Analytics with Python",
+        "__v": 0,
+        "username": "john"
+    }
+
+  users:
+    let UserSchema = new mongoose.Schema({
+        username: String,
+        password: String,
+        usertype: String,
     },
-    "username": "john",
-    "password": "123456",
-    "usertype": "admin"
-    "__v": 0
-}
+    { collection: 'usersdb' });
+    
+    {
+        "_id": {
+            "$oid": "5bcc8a7585eb763974c93595"
+        },
+        "username": "john",
+        "password": "123456",
+        "__v": 0
+    }
 
 ## Sample Test execution.
 $ D:\WIT\OnlineLibrary>mocha test/routes/books-test.js
